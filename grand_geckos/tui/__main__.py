@@ -3,11 +3,11 @@
 A simple example of a Notepad-like text editor.
 """
 
-from grand_geckos.tui.core import application
+from grand_geckos.tui.core import get_app
 
 
 def run():
-    application.run()
+    get_app().run()
 
 
 if __name__ == "__main__":

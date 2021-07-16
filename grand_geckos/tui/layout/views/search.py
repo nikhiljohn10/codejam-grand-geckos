@@ -1,16 +1,18 @@
-
-from prompt_toolkit.lexers import DynamicLexer, PygmentsLexer
 from prompt_toolkit.widgets import SearchToolbar, TextArea
-from grand_geckos.tui.state import ApplicationState
+from prompt_toolkit.buffer import Buffer
 
-search_toolbar = SearchToolbar()
+search_buffer = Buffer()
+
+search_toolbar = SearchToolbar(
+    search_buffer=search_buffer,
+    ignore_case=True,
+)
+
 text_field = TextArea(
-    lexer=DynamicLexer(
-        lambda: PygmentsLexer.from_filename(
-            ApplicationState.current_path or ".txt", sync_from_start=False
-        )
-    ),
-    scrollbar=True,
-    line_numbers=True,
-    search_field=search_toolbar,
+    height=1,
+    prompt=' Search: ',
+    style='class:input-field',
+    multiline=False,
+    wrap_lines=False,
+    search_field=search_toolbar
 )

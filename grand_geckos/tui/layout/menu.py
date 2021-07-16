@@ -1,4 +1,5 @@
 from prompt_toolkit.widgets import MenuItem
+
 from grand_geckos.tui.layout import actions
 
 menu_items = [
@@ -6,7 +7,6 @@ menu_items = [
         "File",
         children=[
             MenuItem("New...", handler=actions.do_new_file),
-            MenuItem("Open...", handler=actions.do_open_file),
             MenuItem("Save"),
             MenuItem("Save as..."),
             MenuItem("-", disabled=True),
@@ -25,7 +25,6 @@ menu_items = [
             MenuItem("Find", handler=actions.do_find),
             MenuItem("Find next", handler=actions.do_find_next),
             MenuItem("Replace"),
-            MenuItem("Go To", handler=actions.do_go_to),
             MenuItem("Select All", handler=actions.do_select_all),
             MenuItem("Time/Date", handler=actions.do_time_date),
         ],
@@ -33,9 +32,5 @@ menu_items = [
     MenuItem(
         "View",
         children=[MenuItem("Status Bar", handler=actions.do_status_bar)],
-    ),
-    MenuItem(
-        "Info",
-        children=[MenuItem("About", handler=actions.do_about)],
     ),
 ]
