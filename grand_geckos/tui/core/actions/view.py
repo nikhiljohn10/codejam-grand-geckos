@@ -1,4 +1,4 @@
-from grand_geckos.tui.state import ApplicationState
+from grand_geckos.tui.dashboard.state import ApplicationState
 
 
 def do_status_bar():

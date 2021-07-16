@@ -1,6 +1,6 @@
 from prompt_toolkit.widgets import MenuItem
 
-from grand_geckos.tui.layout import actions
+from grand_geckos.tui.core import actions
 
 menu_items = [
     MenuItem(

@@ -3,7 +3,7 @@ import datetime
 from prompt_toolkit.application.current import get_app
 from prompt_toolkit.search import start_search
 
-from grand_geckos.tui.layout.views.search import search_toolbar
+from grand_geckos.tui.core.views.search import search_toolbar
 
 
 def do_undo():

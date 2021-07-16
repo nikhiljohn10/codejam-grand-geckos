@@ -1,6 +1,6 @@
 from prompt_toolkit.application.current import get_app
 
-from grand_geckos.tui.layout.views.search import search_toolbar
+from grand_geckos.tui.core.views.search import search_toolbar
 
 
 def do_new_file():

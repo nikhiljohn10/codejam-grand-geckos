@@ -1,10 +1,10 @@
 from prompt_toolkit.application import Application
-from prompt_toolkit.layout.layout import Layout
+from prompt_toolkit.key_binding import KeyBindings, KeyPressEvent
+from prompt_toolkit.layout import Layout
 from prompt_toolkit.shortcuts import set_title
 from prompt_toolkit.styles import Style
-from prompt_toolkit.key_binding import KeyBindings, KeyPressEvent
 
-from grand_geckos.tui.layout.content import root_container, search_view
+from grand_geckos.tui.dashboard.layout import root_container, body_view
 
 global_style = Style.from_dict(
     {
@@ -13,19 +13,7 @@ global_style = Style.from_dict(
     }
 )
 
-
-def get_global_bindings() -> KeyBindings:
-
-    kb = KeyBindings()
-
-    @kb.add("c-x")
-    def _find(event: KeyPressEvent) -> None:
-        event.app.exit()
-
-    return kb
-
-
-layout = Layout(root_container, focused_element=search_view.search_buffer)
+layout = Layout(root_container, focused_element=body_view.focused_view())
 
 
 def get_app(theme=global_style):
@@ -35,7 +23,6 @@ def get_app(theme=global_style):
         style=theme,
         mouse_support=True,
         full_screen=True,
-        key_bindings=get_global_bindings(),
     )
     set_title("SECRET CRATE OF GRAND GECKOS")
     return application

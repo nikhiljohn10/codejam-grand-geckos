@@ -1,4 +1,4 @@
-from grand_geckos.tui.layout.actions.edit import (
+from grand_geckos.tui.core.actions.edit import (
     do_copy,
     do_cut,
     do_delete,
@@ -9,8 +9,8 @@ from grand_geckos.tui.layout.actions.edit import (
     do_time_date,
     do_undo,
 )
-from grand_geckos.tui.layout.actions.file import do_exit, do_new_file
-from grand_geckos.tui.layout.actions.view import do_status_bar
+from grand_geckos.tui.core.actions.file import do_exit, do_new_file
+from grand_geckos.tui.core.actions.view import do_status_bar
 
 __all__ = [
     "do_new_file",
